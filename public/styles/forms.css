@@ -1,0 +1,86 @@
+.site-form {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-label, .form-submit, .counter {
+    font-size: 20px;
+}
+
+.form-textarea {
+    min-width: 100%;
+    max-width: 100%;
+    height: 200px;
+}
+
+.name-surname {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.name-container {
+    min-width: 245px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-input-text, .form-input-dropdown {
+    height: 50px;
+}
+
+.form-textarea, .form-input-text, .form-input-dropdown {
+    border: 1px solid var(--contrast);
+    color: var(--contrast);
+    background-color: var(--secondary);
+    font-size: 20px;
+}
+
+.form-input-dropdown {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-input-text:focus, .form-textarea:focus, .form-input-dropdown:focus {
+    border: 3px solid var(--contrast);
+}
+
+.form-submit {
+    padding: 15px;
+    width: 30%;
+    align-self: center;
+    border: none;
+    background-color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.form-submit:focus {
+    transform: scale(1.05);
+}
+
+.response {
+    display: none;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    border: 3px solid #FF0000;
+    background-color: #FFC1C3;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.counter span {
+    color: inherit;
+}
+
+.active {
+    display: block;
+}

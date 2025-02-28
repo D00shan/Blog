@@ -1,0 +1,105 @@
+.edit-section {
+    max-width: 1440px;
+    width: 90%;
+    margin: auto;
+}
+
+.edit-section > h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+.edit-section h2 {
+    text-align: center;
+}
+
+.input-section {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.input-section:has(.editor-image-input) {
+    justify-content: space-between;
+}
+
+.delete-button{
+    width: 32px;
+    height: 32px;
+    background-color: red;
+    border: none;
+}
+
+.editor-input-header {
+    background-color: var(--secondary);
+    flex: 1;
+    font-size: 32px;
+    text-align: center;
+    height: 37px;
+    border: none;
+}
+
+.editor-input-header:hover  {
+    border: 2px solid var(--contrast);
+}
+
+.editor-input-header:focus {
+    border: 2px solid var(--contrast);
+}
+
+.editor-input-paragraph {
+    padding: 2px;
+    font-size: 32px;
+    height: 72px;
+    flex: 1;
+    background-color: var(--secondary);
+    border: none;
+}
+
+.editor-input-paragraph:hover  {
+    border: 2px solid var(--contrast);
+}
+
+.editor-input-paragraph:focus {
+    border: 2px solid var(--contrast);
+}
+
+.editor-image-input::file-selector-button {
+    background-color: var(--accent);
+    height: 50px;
+    width: 100px;
+    border: none;
+}
+
+.add-opts {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.add-button {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    border: none;
+    background-color: var(--accent);
+}
+
+.select-opts {
+    height: 50px;
+    width: 100px;
+    border: none;
+    background-color: var(--secondary);
+}
+
+.publish {
+    background-color: var(--accent);
+    height: 50px;
+    width: 100px;
+    border: none;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+}

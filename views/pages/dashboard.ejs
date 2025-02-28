@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header_adm'); %>
+
+    <main class="site-main">
+    
+        
+        <div class="head-section">
+            <h1>Users</h1>
+            <a class="add-button" href="/admin/write">+</a>
+        </div>
+
+            <% result.forEach((post, index) => { %>
+                <section class="user">
+                    <div class="user-data">
+                        <p>title: <%= post.title %></p>
+                        <p>slug: <a href="/articles/<%= post.slug %>" id="slug<%= index %>">/<%= post.slug %></a></p>
+                    </div>
+                    <div class="delete-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6l-1 14H6L5 6"></path>
+                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                            <path d="M9 6V4h6v2"></path>
+                      </svg>
+                    </div>
+                </section>
+            <% }) %>
+
+            <section class="page-change-bar">
+                <a <% if(page != 1) {%>
+                    href="#"
+                    class="special-link"
+                    data-redirect="<%= page - 1 %>"
+                <% } else {%>
+                    style="opacity: 0;"
+                <% } %>>&lt;</a>
+                <p><%= page %>/<%= Math.ceil(postCount/cutOff) %></p>
+                <a <% if(page < Math.ceil(postCount/cutOff)) {%>
+                    href="#"
+                    class="special-link"
+                    data-redirect="<%= page + 1 %>"
+                <% } else {%>
+                    style="opacity: 0;"
+                <% } %>>&gt;</a>
+            </section>
+
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+    <script src="/scripts/dashboard.js"></script>
+
+</body>
+
+</html>

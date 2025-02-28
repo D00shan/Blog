@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <title>Home</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="site-main">
+        <% if(typeof result[0] !== "undefined") { %>
+            <section class="main-container">
+                <h1 class="index-header">Home page</h1>
+                <div class="articles-box">
+                    <a class="main-article" href="/articles/<%= result[0].slug %>">
+                        <img src="/media/<%= result[0].cover %>" alt="main cover image" class="main-cover">
+                        <h2 class="main-header"><%= result[0].title %></h2>
+                        <p><%= result[0].description %></p>
+                    </a>
+                    <div class="article-list">
+                        <% result.slice(1, 6).forEach((post) => { %>
+                            <a class="side-article" href="/articles/<%= post.slug %>">
+                                <h3 class="side-header"><%= post.title %></h3>
+                                <img src="/media/<%= post.cover %>" alt="side cover images" class="side-cover">
+                            </a>
+                        <% }) %>
+                    </div>
+                </div>
+            </section>
+        <% } %>
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+
+</html>

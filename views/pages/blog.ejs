@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/blog.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="site-main">
+        <section class="blog">
+            <div class="list-header">
+                <h1>Blog</h1>
+                <div class="dropdown">
+                    <button class="dropbtn">Sort By</button>
+                    <div class="dropdown-content">
+                        <a href="?sortby=latest">Latest</a>
+                        <a href="?sortby=oldest">Oldest</a>
+                        <!-- <a href="?sortby=popular">Popular</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-list">
+                <% result.forEach((post) => { %>
+                    <a class="card" href='/articles/<%= post.slug %>'>
+                        <div class="main-image">
+                            <img src="/media/<%= post.cover %>" alt="couldn't retrieve photo" width="100%" height="100%" draggable="false">
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <h2><%= post.title %></h2>
+                                <p><%= post.description %></p>
+                            </div>
+                            <p><%= post.date.toLocaleDateString('en-UK', { year: 'numeric', month: 'short', day: '2-digit' }).replace(',', ''); %></p>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
+        </section>
+        <section class="page-change-bar">
+            <a <% if(page != 1) {%>
+                href="/articles?page=<%= page - 1 %>"
+                class="special-link"
+                data-redirect="<%= page - 1 %>"
+            <% } else {%>
+                style="opacity: 0;"
+            <% } %>>&lt;</a>
+            <p><%= page %>/<%= Math.ceil(postCount/cutOff) %></p>
+            <a <% if(page < Math.ceil(postCount/cutOff)) {%>
+                href="#"
+                class="special-link"
+                data-redirect="<%= page + 1 %>"
+            <% } else {%>
+                style="opacity: 0;"
+            <% } %>>&gt;</a>
+        </section>
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+    <script src="/scripts/blog.js"></script>
+
+</body>
+
+</html>

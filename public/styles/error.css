@@ -1,0 +1,17 @@
+.messagebox {
+    margin: auto;
+    max-width: 1440px;
+    width: 90%;
+}
+
+.title, .message {
+    text-align: center;
+}
+
+.title {
+    font-size: 45px;
+}
+
+.message {
+    font-size: 20px;
+}

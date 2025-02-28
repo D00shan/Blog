@@ -1,0 +1,109 @@
+.article-body, .comment-section, .comment-form{
+    max-width: 750px;
+    width: 90%;
+    margin: 25px auto;
+}
+
+.article-body h1 {
+    margin: 0px;
+    padding: 25px 0px;
+    text-align: center;
+    font-size: 45px;
+}
+
+.article-body h2 {
+    font-size: 32px;
+}
+
+.article-body p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.article-body img {
+    width: 100%;
+}
+
+.comment-section, .comment-form {
+    background-color: var(--secondary);
+    padding: 20px 10px;
+}
+
+.comment-section h1, .comment-form h1 {
+    font-size: 32px;
+    margin: 0px;
+}
+
+.comment {
+    width: 80%;
+    margin: auto;
+}
+
+.input-container {
+    width: 80%;
+    margin: auto;
+}
+
+.form-textarea {
+    margin: 10px 0px;
+    display: block;
+    max-width: 100%;
+    min-width: 100%;
+    height: 200px;
+    background-color: var(--primary);
+    border: 1px solid var(--contrast);
+    font-size: 20px;
+}
+
+.form-textarea:focus {
+    border: 3px solid var(--contrast);
+}
+
+.form-submit {
+    display: block;
+}
+
+.comment p {
+    margin: 0px;
+    font-size: 20px;
+    text-align: justify;
+    padding: 10px 0px;
+}
+
+.page-change-bar {
+    padding: 10px 0px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-change-bar span, .page-change-bar button {
+    font-size: 24px;
+}
+
+.page-change-bar button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: inherit;
+}
+
+.name-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-submit {
+    font-size: 20px;
+    padding: 10px;
+    min-width: 20%;
+    border: none;
+    background-color: var(--accent);
+}
+
+.form-submit:focus {
+    transform: scale(1.05);
+}

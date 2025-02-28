@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    <link rel="stylesheet" href="/styles/write-article.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Write article</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header_adm'); %>
+
+    <main class="site-main">
+        <section class="edit-section">
+            <h1>Write Post</h1>
+
+            <div class="response" id="response-box">
+                <h1>Error:</h1>
+                <p id="message"></p>
+            </div>
+
+            <h2>Post metadata</h2>
+
+            <section id="response" class="response">
+                <h2>Error</h2>
+                <p id="message"></p>
+            </section>
+
+            <div class="site-form">
+                <label class="form-label" for="title">Title:</label>
+                <input type="text" class="form-input-text" id="title" name="title">
+
+                <label for="description" class="form-label">Description:</label>
+                <textarea name="description" id="description" class="form-textarea"></textarea>
+
+                <label for="cover" class="form-label">Cover image:</label>
+                <input type="file" class="editor-image-input" name="cover" id="cover" accept="image/*">
+
+                <label for="slug" class="form-label">Slug:</label>
+                <input type="text" class="form-input-text" id="slug" name="slug">
+
+            </div>
+
+            <h2>Post body</h2>
+
+            <div class="editor" id="editor">
+                <div class="input-section">
+                    <input type="text" class="editor-input-header editor-input">
+                    <button class="delete-button" onclick="deleteBlock(this)">-</button>
+                </div>
+                <div class="input-section">
+                    <textarea class="editor-input-paragraph editor-input"></textarea>
+                    <button class="delete-button" onclick="deleteBlock(this)">-</button>
+                </div>
+                <div class="input-section">
+                    <input type="file" class="editor-image-input editor-input" accept="image/*">
+                    <button class="delete-button" onclick="deleteBlock(this)">-</button>
+                </div>
+            </div>
+
+            <div class="add-opts">
+                <button class="add-button" onclick="addInputSection()">+</button>
+                <select name="select-opts" id="select-opts" class="select-opts">
+                    <option value="0">paragraph</option>
+                    <option value="1">header</option>
+                    <option value="2">image</option>
+                </select>
+            </div>
+
+            <button class="publish" id="publish">Publish</button>
+        </section>
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+    <script src="/scripts/write-article-editor.js"></script>
+    <script src="/scripts/write-article-publish.js"></script>
+
+</body>
+
+</html>

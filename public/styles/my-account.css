@@ -1,0 +1,13 @@
+.account-box {
+    max-width: 750px;
+    width: 90%;
+    margin: auto;
+}
+
+.account-box a {
+    text-decoration: none;
+}
+
+.account-box a:hover {
+    text-decoration: underline;
+}

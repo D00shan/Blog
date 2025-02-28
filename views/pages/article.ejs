@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/article.css">
+    <meta name="description" content="<%= body[0].description %>">
+    <title><%= body[0].title %></title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="site-main">
+        <article class="article-body">
+            <h1><%= body[0].title %></h1>
+            <img src="/media/<%= body[0].cover %>" width="100%">
+            <% body.forEach((block) => { %>
+                <% if(block.type === 'header') { %>
+                    <h2><%= block.content %></h2>
+                <% } else if(block.type === 'paragraph') { %>
+                    <p><%= block.content %></p>
+                <% } else { %>
+                    <img src="/media/<%= block.img_url %>" alt="Couldn't retrieve photo" width="100%">
+                <% } %>
+            <% }) %>
+        </article>
+    </main>
+
+    <%- include('../partials/footer'); %>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Change password</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header_adm'); %>
+
+    
+    <main class="site-main">
+        <form class="site-form" id="form">
+            <h1>Change Password</h1>
+            <label for="current" class="form-label">Current password:</label>
+            <input type="password" name="current" id="current" class="form-input-text" required>
+            <label for="newPass" class="form-label">New password:</label>
+            <input type="password" name="newPass" id="newPass" class="form-input-text">
+            <label for="repeat" class="form-label">Repeat new password:</label>
+            <input type="password" name="repeat" id="repeat" class="form-input-text">
+            <input type="submit" value="Submit" class="form-submit">
+        </form>
+        <section id="response" class="response">
+            <h2>Error</h2>
+            <p id="message"></p>
+        </section>
+    </main>
+
+
+    <%- include('../partials/footer'); %>
+
+    <script src="/scripts/change-pass.js"></script>
+
+</body>
+
+</html>

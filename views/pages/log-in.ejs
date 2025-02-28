@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Log In</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="site-main">
+        <form id="form" class="site-form">
+            <h1>Log in</h1>
+            <label class="form-label" for="uname">Username</label>
+            <input type="text" name="username" id="uname" class="form-input-text" required>
+            <label class="form-label" for="pass">Password</label>
+            <input type="password" name="password" id="pass" class="form-input-text" required>
+            <input type="submit" value="Submit" class="form-submit">
+        </form>
+        <section id="response" class="response">
+            <h2>Error</h2>
+            <p id="message"></p>
+        </section>
+    </main>
+
+    <%- include('../partials/footer'); %>
+    
+    <script src="/scripts/log-in.js"></script>
+</body>
+
+</html>

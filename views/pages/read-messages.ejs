@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/read-messages.css">
+    <title>Read messages</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header_adm'); %>
+
+    
+    <main class="site-main">
+        <h1 class="main-header">Messages</h1>
+        <% if(typeof result !== "undefined") {%>
+            <section class="message-box">
+                    <p>name: <%= result.name %></p>
+                    <p>surname: <%= result.surname %></p>
+                    <p>email: <%= result.email %></p>
+                <p><%= result.message %></p>
+            </section>
+            <section class="page-change-bar">
+                <a <% if(page != 1) {%>
+                    href="#"
+                    class="special-link"
+                    data-redirect="<%= page - 1 %>"
+                <% } else {%>
+                    style="opacity: 0;"
+                <% } %>>&lt;</a>
+                <p><%= page %>/<%= msgCount %></p>
+                <a <% if(page < msgCount) {%>
+                    href="#"
+                    class="special-link"
+                    data-redirect="<%= page + 1 %>"
+                <% } else {%>
+                    style="opacity: 0;"
+                <% } %>>&gt;</a>
+            </section>
+        <% } else { %>
+            <p class="no-msg">No messges as of yet</p>
+        <% } %>
+    </main>
+    
+
+    <%- include('../partials/footer'); %>
+
+    <script src="/scripts/read-messages.js"></script>
+
+</body>
+
+</html>

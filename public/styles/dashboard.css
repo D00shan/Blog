@@ -1,0 +1,65 @@
+.site-main {
+    max-width: 750px;
+    width: 90%;
+    align-self: center;
+}
+
+.user {
+    background-color: var(--secondary);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid;
+    transition: 0.25s;
+    margin: 10px 0px;
+}
+
+.user:hover {
+    transform: scale(1.05);
+}
+
+.user-data {
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.settings {
+    width: 75px;
+}
+
+.head-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-button {
+    border: none;
+    background-color: var(--accent);
+    width: 5%;
+    aspect-ratio: 1/1;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-change-bar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-change-bar a {
+    width: 35px;
+    height: 35px;
+    background-color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

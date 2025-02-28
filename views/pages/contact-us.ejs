@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    <title>Contact Us</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="site-main">
+        <form class="site-form" action="/contact-us/submit" method="post">
+            <h1>Contact Us</h1>
+            <div class="name-surname">
+                <div class="name-container">
+                    <label class="form-label" for="name">Name:</label>
+                    <input type="text" name="name" id="name" class="form-input-text" required maxlength="64">
+                </div>
+                <div class="name-container">
+                    <label class="form-label" for="surname">Surname:</label>
+                    <input type="text" name="surname" id="surname" class="form-input-text" required maxlength="64">
+                </div>
+            </div>
+            <label class="form-label" for="email">Email:</label>
+            <input type="email" name="email" id="email" class="form-input-text" required maxlength="254">
+            <label class="form-label" for="message">Message:</label>
+            <textarea name="message" id="message" class="form-textarea" required maxlength="2000"></textarea>
+            <input type="submit" value="Submit" class="form-submit">
+        </form>
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+
+</html>

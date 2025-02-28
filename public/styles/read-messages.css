@@ -1,0 +1,40 @@
+.main-header {
+    text-align: center;
+}
+
+.message-box {
+    margin: auto;
+    max-width: 750px;
+    width: 90%;
+    padding: 25px;
+    border: 2px solid var(--contrast);
+    background-color: var(--secondary);
+}
+
+.message-box {
+    font-size: 20px;
+}
+
+.page-change-bar {
+    max-width: 750px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-change-bar a {
+    width: 35px;
+    height: 35px;
+    background-color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-msg {
+    text-align: center;
+    font-size: 30px;
+}
