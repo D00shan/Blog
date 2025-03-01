@@ -19,9 +19,8 @@
                 <h1 class="index-header">Home page</h1>
                 <div class="articles-box">
                     <a class="main-article" href="/articles/<%= result[0].slug %>">
-                        <img src="/media/<%= result[0].cover %>" alt="main cover image" class="main-cover">
+                        <img src="/media/<%= result[0].cover %>" alt="main cover image" class="main-cover" width="100%">
                         <h2 class="main-header"><%= result[0].title %></h2>
-                        <p><%= result[0].description %></p>
                     </a>
                     <div class="article-list">
                         <% result.slice(1, 6).forEach((post) => { %>
