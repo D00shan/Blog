@@ -217,8 +217,6 @@ module.exports = {
 
             let result = await adminModel.deleteMsg(req.body.id)
 
-            console.log(result)
-
             res.status(result.status).send(result)
 
         } else {
