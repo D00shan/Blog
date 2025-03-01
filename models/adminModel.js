@@ -400,5 +400,36 @@ module.exports = {
             }
         }
 
+    },
+    deleteMsg: async (id) => {
+
+        let connection
+
+        try {
+            
+            connection = await mysql.createConnection(config)
+
+            connection.execute("DELETE FROM messages WHERE msg_id = ?", [id])
+
+            return {
+                success: true,
+                status: 200
+            }
+
+        } catch (error) {
+            
+            logger.error("Database error:" + error)
+
+            return {
+                success: false,
+                status: 500,
+                message: "Internal server error"
+            }
+
+        } finally {
+            if(connection) {
+                connection.end()
+            }
+        }
     }
 }

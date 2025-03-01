@@ -38,6 +38,8 @@ router.get('/change-pass', adminController.changePass)
 
 router.delete('/delete', adminController.delete)
 
+router.delete('/delete-msg', adminController.deleteMsg)
+
 router.post("/upload", upload.any(), adminController.upload)
 
 router.post("/change-usr-data", upload.any(), adminController.changeUsrData)

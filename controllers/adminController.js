@@ -211,5 +211,18 @@ module.exports = {
         } else {
             res.status(403).json({success: false, message:"Permission denied"})
         }
+    },
+    deleteMsg: async (req, res, next) => {
+        if(req.session.admin) {
+
+            let result = await adminModel.deleteMsg(req.body.id)
+
+            console.log(result)
+
+            res.status(result.status).send(result)
+
+        } else {
+            res.status(403).json({success: false, message:"Permission denied"})
+        }
     }
 }

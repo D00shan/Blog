@@ -12,3 +12,32 @@ document.querySelectorAll(".special-link").forEach((link) => {
 
     link.href = newUrl
 })
+
+function Delete(id) {
+    
+    let userConfirmed = window.confirm("Are you sure you want to proceed?");
+    
+    if (userConfirmed) {
+        $.ajax({
+            url: '/admin/delete-msg',
+            type: 'DELETE',
+            data: {
+                id: id
+            },
+            success: function(response) {
+                location.reload()
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert("Error deleting post")
+                console.error('Error:', textStatus, errorThrown);
+            }
+        });
+    }
+
+}
+
+let  button = document.getElementById("delete")
+
+button.addEventListener("click", () => {
+    Delete(button.parentElement.dataset.id)
+})
